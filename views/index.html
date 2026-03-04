@@ -1,0 +1,377 @@
+<html class="light" lang="vi"><head>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TravelHome - Khám Phá Thế Giới Theo Cách Của Bạn</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13c8ec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header / Navigation -->
+<header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20 gap-4">
+<!-- Logo -->
+<div class="flex items-center gap-2 shrink-0">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined block">travel_explore</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">TravelHome</h2>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden xl:flex items-center gap-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Trang chủ</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Điểm đến</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Tour du lịch</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Khách sạn</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Vé máy bay</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Combo ưu đãi</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Cẩm nang</a>
+</nav>
+<!-- Search & CTA -->
+<div class="flex items-center gap-4 flex-1 justify-end max-w-md">
+<div class="relative w-full max-w-[240px] hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/50" placeholder="Tìm kiếm điểm đến..." type="text"/>
+</div>
+<button class="bg-primary text-slate-900 px-5 py-2.5 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity shrink-0">
+                            Liên hệ
+                        </button>
+<div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-800">
+<img alt="Avatar" class="h-full w-full object-cover" data-alt="User profile picture of a traveler" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH72MIYoO2XxpG03tymY0FWY29W-EQmj9NNhnSBU1ob9HhUGhLSa75bFL7RPkwYSIjhTGBipoZ-RyFYSwDpg73cW8qJGlloWNwyDVz8RScZSARc81D7qTu5vu4ogy3mKulKPFmrH2rI9aPB4ysItSzQdSp-6L81Gw86y7cF99RLGnqWS9qJrXSOQkz-Aze_uh1isAXrdxnLWSL73uQyPhb6H7PD2AcPat_HrwzJSMwpXNCRbaS-LAuFMxt2AjXqYvW3A_4IiclJfM"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section Split Layout -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+<span>Trải nghiệm du lịch 5 sao</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight text-slate-900 dark:text-white">
+                            Khám Phá <span class="text-primary italic">Thế Giới</span> Theo Cách Của Bạn
+                        </h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
+                            Hàng ngàn tour du lịch, khách sạn và vé máy bay giá tốt đang chờ đón bạn. Chúng tôi mang đến những hành trình được thiết kế riêng cho cảm xúc của bạn.
+                        </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-slate-900 px-8 py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-primary/25 transition-all">
+                                Đặt ngay
+                            </button>
+<button class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
+<span class="material-symbols-outlined">play_circle</span>
+                                Xem Video
+                            </button>
+</div>
+<div class="flex items-center gap-4 pt-6">
+<div class="flex -space-x-3">
+<img alt="User 1" class="h-10 w-10 rounded-full border-2 border-white dark:border-slate-900" data-alt="Traveler avatar thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS2ljGi-7hU31YKhpHRhxuJRKfuYGXWNhwSP8lUqL1pb9KVCD-RGZisI5hOLIkPl9kL2Lb8bZ5ng-xtQuj2TsT9Gf5fasatij7sFVm3bfD4h0ZBe9rlK4ZHk0mSzquMF0H-U7mqd57Jv85vECeE_35eUP89tlwIjmZLh8r8QDO30rjvBOj7px3i6949ikjUMIZVEnj7kT9-xcRHWcnuBzujMQWhRRkpz7ogvFeMtJaMAb9ALT-1eobUWirDEJgqjJJOAeQGE0-Lt0"/>
+<img alt="User 2" class="h-10 w-10 rounded-full border-2 border-white dark:border-slate-900" data-alt="Traveler avatar thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoKi9bF8LjwmqqHGw3ysS0R8AANDakFoJvQtvQYM18kZHxv5_qodqswjQKu1A_Thxm_nb2kHwL1WM53Cb7RLs_nmlvsGdnGlLA48a3diEySxD7vLTzHIZRsmqlAgA_auPC5hWcwDv_8Tdr-gvX0Xgy3j4t0X7YoIg-NG-GWvh719l7zPrJnDwGBCe9nLE72QmqORP31Eg7KxzqMN-duDfKKYnQrnDjvEIx7aQofwiccj9vCje6A1QA7Mnb_uph2pu7ycOUSGL5CwA"/>
+<img alt="User 3" class="h-10 w-10 rounded-full border-2 border-white dark:border-slate-900" data-alt="Traveler avatar thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzugIWGAOw6MgYHcPKxi-U82LOqNyaoJczkUhJgH0jtrZNGtdrg8yAWrExqdyLleLKX3xiPqwv-DdPupCQtXq5L1jIjSaxFrcTnbbAco_IQLk-hKkcrtHkglnwpCc8sFDN3rIi5l6osLl9NETHPXORqtTie7LmCNNXEtu4T9OSTy3MzBEktpUJtyo62staVqAWudA2e0EtdrvK-PmhSdiaNX1-F4UpZpzn-FxCX2e3syHc0ZIA_lA5gJWVtMGoK85RfGJRxP1yzC0"/>
+</div>
+<p class="text-sm font-medium text-slate-500"><span class="text-slate-900 dark:text-white font-bold">50,000+</span> du khách đã tin tưởng</p>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/20 rounded-[2.5rem] blur-2xl group-hover:bg-primary/30 transition-all duration-500"></div>
+<div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+<img alt="Travel destination" class="w-full h-full object-cover" data-alt="Lush tropical beach landscape in Bali" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhi0kTWzmtUq0JZYKGKA1qdJ6Ru-L1w0o_BPRdmTIoewgKcAqKbq-MqRyvFfm9xunt6tendwSfJGW3x3cLZ-XXFRjn0ngKZJ8aG3UKohgAK0jMbnK-ikquyoAFGsQ4c1Donp4iyFW0Vui4BEaa4CQ4bY5HU63z4mNk-hYZdRr_Hjf-f8GgGIltTNMhfHB71gyV_ghBioFtsEDrIhugBZPL9NRL3IZrspS1gm0ygC_PSI6Xu2i8zww7uQBKngKVADJekhgUN91WSv4"/>
+<div class="absolute bottom-6 left-6 right-6 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 text-white">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-xs uppercase tracking-widest font-bold opacity-80 mb-1">Điểm đến nổi bật</p>
+<h3 class="text-2xl font-bold">Bali, Indonesia</h3>
+</div>
+<div class="text-right">
+<p class="text-xs opacity-80 mb-1">Giá chỉ từ</p>
+<p class="text-xl font-bold">12.500.000đ</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative elements -->
+<div class="absolute -top-6 -right-6 h-32 w-32 bg-primary rounded-2xl -z-10 rotate-12 opacity-20"></div>
+<div class="absolute -bottom-6 -left-6 h-40 w-40 border-4 border-primary rounded-full -z-10 opacity-20"></div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="bg-slate-50 dark:bg-slate-900/50 py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="max-w-3xl mx-auto space-y-4 mb-16">
+<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">Tại Sao Nên Chọn Chúng Tôi?</h2>
+<p class="text-slate-600 dark:text-slate-400">Chúng tôi không chỉ bán tour, chúng tôi kiến tạo những kỷ niệm vô giá xuyên suốt hành trình của bạn.</p>
+</div>
+<div class="grid sm:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-slate-800 p-10 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all group">
+<div class="h-16 w-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">local_offer</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Giá Tốt Nhất</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Hợp tác trực tiếp với các hãng hàng không và khách sạn để mang đến mức giá cạnh tranh nhất thị trường.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-10 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all group">
+<div class="h-16 w-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Hỗ Trợ 24/7</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Đội ngũ chuyên viên giàu kinh nghiệm luôn sẵn sàng đồng hành và giải đáp thắc mắc của bạn bất kể lúc nào.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-10 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all group">
+<div class="h-16 w-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">travel</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Trải Nghiệm Độc Bản</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Cung cấp các lộ trình khám phá độc đáo, mang đậm bản sắc địa phương mà bạn không thể tìm thấy ở đâu khác.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Top Destinations Slider -->
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-end justify-between mb-12">
+<div class="space-y-2">
+<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Điểm Đến Hàng Đầu</h2>
+<p class="text-slate-500 dark:text-slate-400">Gợi ý những tọa độ "hot" nhất mùa này dành cho bạn.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined block">chevron_left</span>
+</button>
+<button class="p-2 rounded-full bg-primary text-slate-900 hover:opacity-90">
+<span class="material-symbols-outlined block">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-8 scrollbar-hide snap-x">
+<!-- Card 1 -->
+<div class="min-w-[300px] group snap-start">
+<div class="relative aspect-[3/4] rounded-3xl overflow-hidden mb-4">
+<img alt="Ha Long" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Emerald waters and limestone islands of Ha Long Bay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1hK9jI9Qxi6FFtYWRelaeb6YXYRxFnfu9tN4Xy0nI2B82oBZlV3tW-gaxahhPQFSKc8zPTLInbBLGDixtr8_E5EEWWtJS1L8FvuuUt5lBP-QwS4GyEZ1wDhJKcCA7AasUeNSaY4SujH_u_5yimBP5NLAlysVJlhojiObSDguIPV0vBwaXZEhdeAe9Wqy-9zzAIPhs5kJOszU_OXNdAvyCixIY3J5nCVsbZDJMlZG8ZC_KEhGJ5A91jy_93FDSAWKAuKI06J0TzlU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+<div class="absolute bottom-5 left-5">
+<h4 class="text-white text-xl font-bold">Vịnh Hạ Long</h4>
+<p class="text-white/80 text-sm">Quảng Ninh, Việt Nam</p>
+</div>
+<button class="absolute top-5 right-5 h-10 w-10 bg-white/20 backdrop-blur-md rounded-full text-white flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[300px] group snap-start">
+<div class="relative aspect-[3/4] rounded-3xl overflow-hidden mb-4">
+<img alt="Phu Quoc" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Sunset over a palm-fringed beach in Phu Quoc" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKy6KSxHZ-MbRgYLPG6ebsnYYwZkOgJKsjAK1vJIXQrPvedCU_7pUIL2E_dbccEDC4H2MQwMxfBsqZ8MaBKWwcrMEIEpSFo0QZ6Ke9uznSjYdC-Jxvr8xIY1Nd44MkoGkMM2q72JzGznzpEYlUUyw70LDs9m_RgMW4J3RgQWrWcecocB-vdWo2i-9FzUPYs-B7AeN3djHTN3NQjCz22tYMqmibrXOlJj8ykHmLvoCFqPtWNeIc9VB3dSy1xqnJwM4Opu2zKTJEAQ0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+<div class="absolute bottom-5 left-5">
+<h4 class="text-white text-xl font-bold">Phú Quốc</h4>
+<p class="text-white/80 text-sm">Kiên Giang, Việt Nam</p>
+</div>
+<button class="absolute top-5 right-5 h-10 w-10 bg-white/20 backdrop-blur-md rounded-full text-white flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="min-w-[300px] group snap-start">
+<div class="relative aspect-[3/4] rounded-3xl overflow-hidden mb-4">
+<img alt="Hoi An" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Traditional colorful lanterns in Hoi An old town" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLS5ud2RV_iF9oyMOORu7rSqiClkJ7wa8YFiJlBPJwrOVEYqxvt8HfXWluIV-hBBXPDeTD1SxoZveatpmIqAe8ADlRhBUu8mySPf3R5kQEG_kqWZzYED1_1s9z-JasUNEYT67D3iAhwCxgMfpZnmhMI3oG8F3jeLQnb2bskxz5RFJX0dqxV3VwBzg-NXk5EpXEIe67TfApB5CE4LCyhTd7akpdoGEMmTzxu8Dz1zKKurD2iEvzCI8NgAiqvFEKwsbGiX3SPARGEqk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+<div class="absolute bottom-5 left-5">
+<h4 class="text-white text-xl font-bold">Hội An</h4>
+<p class="text-white/80 text-sm">Quảng Nam, Việt Nam</p>
+</div>
+<button class="absolute top-5 right-5 h-10 w-10 bg-white/20 backdrop-blur-md rounded-full text-white flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="min-w-[300px] group snap-start">
+<div class="relative aspect-[3/4] rounded-3xl overflow-hidden mb-4">
+<img alt="Da Lat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Misty pine forest landscape in Da Lat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs7sxZG6oHDHe6n-On1Ptr-TGFIb8lgHTT6tFXVf51m-y5y_W7Eum9dIeKCHJWC7emFrO6pet3927R_KraCtSemqDpwI9K7Lqn_ah0sywa4FfU0ibq-GGKeiz1psqUoUq170yyGHGRqRKUl6JP867bzEjgz0muNI9LJtnc_BIrmeWtAyH6YQWzBie9LSLD97uUGj66jZmRj-OzohMxfWqJod9_udVwslr7vbTdpgH_3CaTfDAAnkiqXYigFU1oSjcb0yApzDYtwo0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+<div class="absolute bottom-5 left-5">
+<h4 class="text-white text-xl font-bold">Đà Lạt</h4>
+<p class="text-white/80 text-sm">Lâm Đồng, Việt Nam</p>
+</div>
+<button class="absolute top-5 right-5 h-10 w-10 bg-white/20 backdrop-blur-md rounded-full text-white flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest Travel Guide (Blog Section) -->
+<section class="bg-slate-50 dark:bg-slate-900/50 py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">Cẩm Nang Du Lịch</h2>
+<p class="text-slate-500 dark:text-slate-400">Bí kíp và những câu chuyện thú vị cho chuyến đi sắp tới của bạn.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<article class="bg-white dark:bg-slate-800 rounded-[2rem] overflow-hidden shadow-sm group">
+<div class="relative h-56 overflow-hidden">
+<img alt="Japan guide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cherry blossoms in front of a traditional Japanese temple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvkKwF43WQeVCwP-mLqXYnPiBzR7DIrmMP6XDLz6XnKbK3vBaBqQH8cWgnv7hXr231RdKA0MAnxUcs2OFNllNHXzc_KpsIzDWKKcoyGj3gS0rwivGsTU3JA2NUDq-E84Yi5O4-0fFLWfGwCe6ElZwnLE46lnl7rRJ5TUiO14Tlrdq-NKYOjJGjnLYSEdXJJfPL_yCwnfvPhe-u70PUtpkNL7wbyzDx_9dm15jj7zjtpVsQakVf1eEDahnOgCwxekkEo3GbVxOpwkI"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-primary text-slate-900 text-xs font-bold rounded-full">Kinh nghiệm</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 text-slate-400 text-xs mb-3">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+<span>24 Tháng 5, 2024</span>
+</div>
+<h3 class="text-xl font-bold mb-4 line-clamp-2 hover:text-primary transition-colors cursor-pointer">Cẩm nang du lịch Nhật Bản tự túc cho người mới bắt đầu</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">Mọi thứ bạn cần biết từ visa, phương tiện đi lại đến những địa điểm check-in không thể bỏ lỡ tại xứ sở hoa anh đào...</p>
+<a class="text-primary font-bold text-sm flex items-center gap-2 group/link" href="#">
+                                    Đọc thêm 
+                                    <span class="material-symbols-outlined text-lg group-hover/link:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-[2rem] overflow-hidden shadow-sm group">
+<div class="relative h-56 overflow-hidden">
+<img alt="Travel hacks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A person packing a minimalist travel bag" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgUx_MMlfDtRIMOJkyjl_ynZvhVzijSl3yeUNiiNokhdZnKbKyvIv64yzcKqXDOd80EzOPoRhtQGC837zWQlxxh-3NpEls631OebntbNjv-8IkMYXbFBNGAGQur92wQsy2axPuwBOBPyH-DcnBfzAn7mWfrnRdwRhcURqwkVRLOtUdoqVpY1MU657ru3bMizhHCVU1h0lKPPT3q_dbglpxE9Gs4yps5VWzZ5S4EcOazs-TjzTKXAJrphFOpw__ArRQ9_USecXqFHI"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-primary text-slate-900 text-xs font-bold rounded-full">Mẹo vặt</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 text-slate-400 text-xs mb-3">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+<span>18 Tháng 5, 2024</span>
+</div>
+<h3 class="text-xl font-bold mb-4 line-clamp-2 hover:text-primary transition-colors cursor-pointer">10 mẹo đóng gói hành lý siêu gọn cho chuyến đi dài ngày</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">Làm thế nào để mang cả thế giới trong một chiếc vali mà không lo quá cân? Khám phá ngay bí quyết của các phượt thủ chuyên nghiệp...</p>
+<a class="text-primary font-bold text-sm flex items-center gap-2 group/link" href="#">
+                                    Đọc thêm 
+                                    <span class="material-symbols-outlined text-lg group-hover/link:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-[2rem] overflow-hidden shadow-sm group">
+<div class="relative h-56 overflow-hidden">
+<img alt="Food tour" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A table full of delicious French pastries in a Parisian cafe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfRnyg96tchY9gvMdq_RwELFo1oz9FAm2Wzliv_AXCG2tzvXquMarTEq48D5xhz9QSncPyg6G5iVhnX8ggSG4bBubawpVOqICxdrCDOsYkoyf3UXIlFCiWM9sXcTdCF0T16Kt3PbwuGyJyuFCz9-cp8MEtITPVfaX5rwj2yb_piBMfL9m9x7SUH7ATZTa2WNQeeBcP5ch1rcDCQyeyWQpJQmZg0uLsaBsyEAeCPT-uxQ9TPRPixCwGl3PZ5cAIgqwf1WMKbBUQeHE"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-primary text-slate-900 text-xs font-bold rounded-full">Ẩm thực</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 text-slate-400 text-xs mb-3">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+<span>12 Tháng 5, 2024</span>
+</div>
+<h3 class="text-xl font-bold mb-4 line-clamp-2 hover:text-primary transition-colors cursor-pointer">Food tour Paris: Top 5 quán bánh ngọt nhất định phải thử</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">Lạc bước trong thế giới ngọt ngào của kinh đô ánh sáng với những chiếc bánh croissant và macaron huyền thoại...</p>
+<a class="text-primary font-bold text-sm flex items-center gap-2 group/link" href="#">
+                                    Đọc thêm 
+                                    <span class="material-symbols-outlined text-lg group-hover/link:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-900 text-slate-400 py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="space-y-6">
+<div class="flex items-center gap-2 text-white">
+<div class="bg-primary p-1.5 rounded-lg">
+<span class="material-symbols-outlined block text-slate-900">travel_explore</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight">TravelHome</h2>
+</div>
+<p class="text-sm leading-relaxed">
+                            Chúng tôi cam kết mang đến những trải nghiệm du lịch tuyệt vời và đáng nhớ nhất cho mọi khách hàng. Khám phá thế giới cùng TravelHome ngay hôm nay.
+                        </p>
+<div class="flex gap-4">
+<a class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Liên kết nhanh</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Về chúng tôi</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Điều khoản dịch vụ</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Chính sách bảo mật</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Câu hỏi thường gặp</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Đối tác</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Dịch vụ</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Đặt vé máy bay</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Khách sạn cao cấp</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Thuê xe du lịch</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Bảo hiểm du lịch</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tổ chức sự kiện</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Bản tin</h4>
+<p class="text-sm mb-6">Đăng ký để nhận các ưu đãi hấp dẫn và tin tức du lịch mới nhất.</p>
+<form class="space-y-3">
+<input class="w-full px-4 py-3 bg-slate-800 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/50 text-white placeholder:text-slate-500" placeholder="Email của bạn" type="email"/>
+<button class="w-full bg-primary text-slate-900 font-bold py-3 rounded-xl hover:opacity-90 transition-opacity">Đăng ký ngay</button>
+</form>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-800 text-center text-xs">
+<p>© 2024 TravelHome. All rights reserved. Designed with passion for travelers.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
