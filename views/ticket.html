@@ -1,0 +1,464 @@
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TravelHome - Đặt Vé Máy Bay Giá Rẻ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13c8ec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .flight-card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20 gap-4">
+<div class="flex items-center gap-2 shrink-0">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined block">travel_explore</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">TravelHome</h2>
+</div>
+<nav class="hidden xl:flex items-center gap-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/">Trang chủ</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/plant">Điểm đến</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Tour du lịch</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/hotel">Khách sạn</a>
+<a class="text-sm font-semibold text-primary transition-colors border-b-2 border-primary" href="#">Vé máy bay</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Combo ưu đãi</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Cẩm nang</a>
+</nav>
+<div class="flex items-center gap-4 flex-1 justify-end max-w-md">
+<div class="relative w-full max-w-[240px] hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/50" placeholder="Tìm chuyến bay..." type="text"/>
+</div>
+<button class="bg-primary text-slate-900 px-5 py-2.5 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity shrink-0">Liên hệ</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<section class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-2 p-1.5 bg-slate-100 dark:bg-slate-800 rounded-2xl w-fit">
+<button class="px-6 py-2.5 bg-white dark:bg-slate-700 rounded-xl text-sm font-bold text-primary shadow-sm">Một chiều</button>
+<button class="px-6 py-2.5 rounded-xl text-sm font-semibold text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">Khứ hồi</button>
+<button class="px-6 py-2.5 rounded-xl text-sm font-semibold text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">Đa chặng</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+<div class="relative">
+<label class="block text-xs font-bold text-slate-400 uppercase mb-2 ml-1">Điểm đi</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">flight_takeoff</span>
+<input class="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-2xl text-sm font-bold focus:ring-2 focus:ring-primary focus:border-transparent" type="text" value="TP. Hồ Chí Minh (SGN)"/>
+</div>
+</div>
+<div class="relative">
+<label class="block text-xs font-bold text-slate-400 uppercase mb-2 ml-1">Điểm đến</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">flight_land</span>
+<input class="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-2xl text-sm font-bold focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Bạn muốn đi đâu?" type="text"/>
+</div>
+<button class="absolute -right-6 top-1/2 translate-y-2 z-10 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-full p-2 hidden lg:block hover:rotate-180 transition-transform shadow-md">
+<span class="material-symbols-outlined text-sm block">sync</span>
+</button>
+</div>
+<div class="relative">
+<label class="block text-xs font-bold text-slate-400 uppercase mb-2 ml-1">Ngày đi</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">calendar_month</span>
+<input class="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-2xl text-sm font-bold focus:ring-2 focus:ring-primary focus:border-transparent" type="text" value="30 Th05, 2024"/>
+</div>
+</div>
+<div class="relative">
+<label class="block text-xs font-bold text-slate-400 uppercase mb-2 ml-1">Ngày về</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">calendar_month</span>
+<input class="w-full pl-12 pr-4 py-4 bg-slate-100 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-2xl text-sm font-bold opacity-60" disabled="" placeholder="Thêm ngày về" type="text"/>
+</div>
+</div>
+<div class="relative">
+<label class="block text-xs font-bold text-slate-400 uppercase mb-2 ml-1">Hạng ghế &amp; Hành khách</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">person</span>
+<input class="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-2xl text-sm font-bold focus:ring-2 focus:ring-primary focus:border-transparent" type="text" value="1 Khách, Phổ thông"/>
+</div>
+</div>
+</div>
+<div class="flex justify-end pt-2">
+<button class="bg-primary text-slate-900 px-10 py-4 rounded-2xl font-extrabold flex items-center gap-2 hover:shadow-lg hover:shadow-primary/25 transition-all">
+<span class="material-symbols-outlined">search</span>
+                                Tìm Chuyến Bay
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">sell</span>
+<h2 class="text-2xl font-extrabold text-slate-900 dark:text-white uppercase tracking-tight">Ưu đãi vé máy bay</h2>
+</div>
+<a class="text-sm font-bold text-primary hover:underline" href="#">Xem tất cả ưu đãi</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 flex items-center justify-between group hover:border-primary transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-16 h-10 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center overflow-hidden">
+<span class="text-[10px] font-bold text-blue-800 uppercase">Vietnam Airlines</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase">SGN → HAN</p>
+<p class="text-lg font-extrabold text-slate-900 dark:text-white">890.000đ</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_forward_ios</span>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 flex items-center justify-between group hover:border-primary transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-16 h-10 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center overflow-hidden">
+<span class="text-[10px] font-bold text-red-600 uppercase">Vietjet Air</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase">SGN → DAD</p>
+<p class="text-lg font-extrabold text-slate-900 dark:text-white">550.000đ</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_forward_ios</span>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 flex items-center justify-between group hover:border-primary transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-16 h-10 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center overflow-hidden">
+<span class="text-[10px] font-bold text-emerald-600 uppercase">Bamboo Airways</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase">SGN → PQC</p>
+<p class="text-lg font-extrabold text-slate-900 dark:text-white">720.000đ</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</section>
+<section class="pb-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-4 gap-8 items-start">
+<aside class="space-y-6 lg:sticky lg:top-24">
+<div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 space-y-8">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-lg">Bộ lọc</h3>
+<button class="text-sm font-bold text-primary">Xóa tất cả</button>
+</div>
+<div class="space-y-4">
+<h4 class="text-sm font-bold uppercase tracking-wider text-slate-400">Hãng hàng không</h4>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Vietnam Airlines</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Vietjet Air</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Bamboo Airways</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Vietravel Airlines</span>
+</label>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="text-sm font-bold uppercase tracking-wider text-slate-400">Số điểm dừng</h4>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Bay thẳng</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">1 điểm dừng</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">2+ điểm dừng</span>
+</label>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="text-sm font-bold uppercase tracking-wider text-slate-400">Giờ cất cánh</h4>
+<div class="grid grid-cols-2 gap-2">
+<button class="p-3 border border-slate-200 dark:border-slate-700 rounded-xl flex flex-col items-center gap-1 hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-lg">wb_twilight</span>
+<span class="text-[10px] font-bold">00:00 - 06:00</span>
+</button>
+<button class="p-3 border border-primary bg-primary/5 rounded-xl flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-lg text-primary">wb_sunny</span>
+<span class="text-[10px] font-bold text-primary">06:00 - 12:00</span>
+</button>
+<button class="p-3 border border-slate-200 dark:border-slate-700 rounded-xl flex flex-col items-center gap-1 hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-lg">sunny</span>
+<span class="text-[10px] font-bold">12:00 - 18:00</span>
+</button>
+<button class="p-3 border border-slate-200 dark:border-slate-700 rounded-xl flex flex-col items-center gap-1 hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-lg">bedtime</span>
+<span class="text-[10px] font-bold">18:00 - 24:00</span>
+</button>
+</div>
+</div>
+</div>
+<div class="relative rounded-2xl overflow-hidden aspect-[4/5] group">
+<img alt="Promo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhi0kTWzmtUq0JZYKGKA1qdJ6Ru-L1w0o_BPRdmTIoewgKcAqKbq-MqRyvFfm9xunt6tendwSfJGW3x3cLZ-XXFRjn0ngKZJ8aG3UKohgAK0jMbnK-ikquyoAFGsQ4c1Donp4iyFW0Vui4BEaa4CQ4bY5HU63z4mNk-hYZdRr_Hjf-f8GgGIltTNMhfHB71gyV_ghBioFtsEDrIhugBZPL9NRL3IZrspS1gm0ygC_PSI6Xu2i8zww7uQBKngKVADJekhgUN91WSv4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 flex flex-col justify-end">
+<p class="text-white/80 text-xs font-bold uppercase tracking-widest mb-1">Đặc quyền thẻ thành viên</p>
+<h4 class="text-white text-xl font-bold mb-4">Giảm thêm 15% cho khách hàng TravelHome</h4>
+<button class="w-full py-3 bg-white text-slate-900 rounded-xl font-bold text-sm">Tìm hiểu ngay</button>
+</div>
+</div>
+</aside>
+<div class="lg:col-span-3 space-y-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-slate-500 font-medium">Tìm thấy <span class="text-slate-900 dark:text-white font-bold">124 chuyến bay</span> phù hợp</h3>
+<div class="flex items-center gap-2">
+<span class="text-sm font-medium text-slate-500">Sắp xếp theo:</span>
+<select class="bg-transparent border-none text-sm font-bold text-primary focus:ring-0 cursor-pointer">
+<option>Giá thấp nhất</option>
+<option>Cất cánh sớm nhất</option>
+<option>Thời gian bay ngắn nhất</option>
+</select>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 flight-card-shadow hover:border-primary transition-all group">
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="w-full md:w-32 flex flex-col items-center md:items-start gap-2">
+<div class="w-16 h-10 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center overflow-hidden">
+<span class="text-[10px] font-bold text-blue-800 uppercase">Vietnam Airlines</span>
+</div>
+<p class="text-xs font-bold text-slate-400">VN-234 • Airbus A321</p>
+</div>
+<div class="flex-1 flex items-center justify-between gap-4 w-full">
+<div class="text-center md:text-left">
+<p class="text-2xl font-extrabold">06:00</p>
+<p class="text-sm font-bold text-slate-500">SGN</p>
+</div>
+<div class="flex-1 flex flex-col items-center">
+<p class="text-xs font-bold text-slate-400 mb-1">2h 10m</p>
+<div class="relative w-full h-[2px] bg-slate-200 dark:bg-slate-700">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-slate-800 px-2">
+<span class="material-symbols-outlined text-primary text-lg">flight</span>
+</div>
+</div>
+<p class="text-xs font-bold text-emerald-500 mt-2 uppercase tracking-wide">Bay thẳng</p>
+</div>
+<div class="text-center md:text-right">
+<p class="text-2xl font-extrabold">08:10</p>
+<p class="text-sm font-bold text-slate-500">HAN</p>
+</div>
+</div>
+<div class="w-full md:w-48 flex flex-row md:flex-col items-center justify-between md:justify-center gap-4 border-t md:border-t-0 md:border-l border-slate-100 dark:border-slate-700 pt-4 md:pt-0 md:pl-8">
+<div class="text-right md:text-center w-full">
+<p class="text-xs font-bold text-slate-400 line-through">1.250.000đ</p>
+<p class="text-2xl font-extrabold text-primary">890.000đ</p>
+<p class="text-[10px] font-bold text-slate-400">/khách</p>
+</div>
+<button class="bg-primary text-slate-900 w-full py-3 rounded-xl font-extrabold text-sm hover:opacity-90 transition-opacity">Chọn chuyến</button>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex gap-4">
+<span class="text-[10px] font-bold flex items-center gap-1 text-slate-500"><span class="material-symbols-outlined text-sm">luggage</span> 20kg ký gửi</span>
+<span class="text-[10px] font-bold flex items-center gap-1 text-slate-500"><span class="material-symbols-outlined text-sm">restaurant</span> Suất ăn nhẹ</span>
+</div>
+<button class="text-[10px] font-bold text-primary flex items-center gap-1">Chi tiết chuyến bay <span class="material-symbols-outlined text-xs">keyboard_arrow_down</span></button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 flight-card-shadow hover:border-primary transition-all group">
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="w-full md:w-32 flex flex-col items-center md:items-start gap-2">
+<div class="w-16 h-10 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center overflow-hidden">
+<span class="text-[10px] font-bold text-red-600 uppercase">Vietjet Air</span>
+</div>
+<p class="text-xs font-bold text-slate-400">VJ-152 • Airbus A320</p>
+</div>
+<div class="flex-1 flex items-center justify-between gap-4 w-full">
+<div class="text-center md:text-left">
+<p class="text-2xl font-extrabold">09:15</p>
+<p class="text-sm font-bold text-slate-500">SGN</p>
+</div>
+<div class="flex-1 flex flex-col items-center">
+<p class="text-xs font-bold text-slate-400 mb-1">2h 15m</p>
+<div class="relative w-full h-[2px] bg-slate-200 dark:bg-slate-700">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-slate-800 px-2">
+<span class="material-symbols-outlined text-primary text-lg">flight</span>
+</div>
+</div>
+<p class="text-xs font-bold text-emerald-500 mt-2 uppercase tracking-wide">Bay thẳng</p>
+</div>
+<div class="text-center md:text-right">
+<p class="text-2xl font-extrabold">11:30</p>
+<p class="text-sm font-bold text-slate-500">HAN</p>
+</div>
+</div>
+<div class="w-full md:w-48 flex flex-row md:flex-col items-center justify-between md:justify-center gap-4 border-t md:border-t-0 md:border-l border-slate-100 dark:border-slate-700 pt-4 md:pt-0 md:pl-8">
+<div class="text-right md:text-center w-full">
+<p class="text-2xl font-extrabold text-primary">550.000đ</p>
+<p class="text-[10px] font-bold text-slate-400">/khách</p>
+</div>
+<button class="bg-primary text-slate-900 w-full py-3 rounded-xl font-extrabold text-sm hover:opacity-90 transition-opacity">Chọn chuyến</button>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex gap-4">
+<span class="text-[10px] font-bold flex items-center gap-1 text-slate-500"><span class="material-symbols-outlined text-sm">work</span> 7kg xách tay</span>
+</div>
+<button class="text-[10px] font-bold text-primary flex items-center gap-1">Chi tiết chuyến bay <span class="material-symbols-outlined text-xs">keyboard_arrow_down</span></button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 flight-card-shadow hover:border-primary transition-all group">
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="w-full md:w-32 flex flex-col items-center md:items-start gap-2">
+<div class="w-16 h-10 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center overflow-hidden">
+<span class="text-[10px] font-bold text-emerald-600 uppercase">Bamboo Airways</span>
+</div>
+<p class="text-xs font-bold text-slate-400">QH-206 • Boeing 787</p>
+</div>
+<div class="flex-1 flex items-center justify-between gap-4 w-full">
+<div class="text-center md:text-left">
+<p class="text-2xl font-extrabold">13:45</p>
+<p class="text-sm font-bold text-slate-500">SGN</p>
+</div>
+<div class="flex-1 flex flex-col items-center">
+<p class="text-xs font-bold text-slate-400 mb-1">2h 10m</p>
+<div class="relative w-full h-[2px] bg-slate-200 dark:bg-slate-700">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-slate-800 px-2">
+<span class="material-symbols-outlined text-primary text-lg">flight</span>
+</div>
+</div>
+<p class="text-xs font-bold text-emerald-500 mt-2 uppercase tracking-wide">Bay thẳng</p>
+</div>
+<div class="text-center md:text-right">
+<p class="text-2xl font-extrabold">15:55</p>
+<p class="text-sm font-bold text-slate-500">HAN</p>
+</div>
+</div>
+<div class="w-full md:w-48 flex flex-row md:flex-col items-center justify-between md:justify-center gap-4 border-t md:border-t-0 md:border-l border-slate-100 dark:border-slate-700 pt-4 md:pt-0 md:pl-8">
+<div class="text-right md:text-center w-full">
+<p class="text-2xl font-extrabold text-primary">720.000đ</p>
+<p class="text-[10px] font-bold text-slate-400">/khách</p>
+</div>
+<button class="bg-primary text-slate-900 w-full py-3 rounded-xl font-extrabold text-sm hover:opacity-90 transition-opacity">Chọn chuyến</button>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex gap-4">
+<span class="text-[10px] font-bold flex items-center gap-1 text-slate-500"><span class="material-symbols-outlined text-sm">luggage</span> 20kg ký gửi</span>
+</div>
+<button class="text-[10px] font-bold text-primary flex items-center gap-1">Chi tiết chuyến bay <span class="material-symbols-outlined text-xs">keyboard_arrow_down</span></button>
+</div>
+</div>
+<div class="pt-8 flex justify-center">
+<button class="px-8 py-3 border-2 border-slate-200 dark:border-slate-700 rounded-xl font-bold text-sm hover:border-primary hover:text-primary transition-all">Xem thêm chuyến bay khác</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-slate-900 text-slate-400 py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="space-y-6">
+<div class="flex items-center gap-2 text-white">
+<div class="bg-primary p-1.5 rounded-lg">
+<span class="material-symbols-outlined block text-slate-900">travel_explore</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight">TravelHome</h2>
+</div>
+<p class="text-sm leading-relaxed">
+                            Chúng tôi cam kết mang đến những trải nghiệm du lịch tuyệt vời và đáng nhớ nhất cho mọi khách hàng. Khám phá thế giới cùng TravelHome ngay hôm nay.
+                        </p>
+<div class="flex gap-4">
+<a class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-colors" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-colors" href="#"><span class="material-symbols-outlined text-lg">share</span></a>
+<a class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-colors" href="#"><span class="material-symbols-outlined text-lg">mail</span></a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Liên kết nhanh</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Về chúng tôi</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Điều khoản dịch vụ</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Chính sách bảo mật</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Câu hỏi thường gặp</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Dịch vụ</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Đặt vé máy bay</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Khách sạn cao cấp</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Thuê xe du lịch</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Bảo hiểm du lịch</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Bản tin</h4>
+<p class="text-sm mb-6">Đăng ký để nhận các ưu đãi hấp dẫn và tin tức du lịch mới nhất.</p>
+<form class="space-y-3">
+<input class="w-full px-4 py-3 bg-slate-800 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/50 text-white placeholder:text-slate-500" placeholder="Email của bạn" type="email"/>
+<button class="w-full bg-primary text-slate-900 font-bold py-3 rounded-xl hover:opacity-90 transition-opacity">Đăng ký ngay</button>
+</form>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-800 text-center text-xs">
+<p>© 2024 TravelHome. All rights reserved. Designed with passion for travelers.</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

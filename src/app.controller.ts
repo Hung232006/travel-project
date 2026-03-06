@@ -10,4 +10,17 @@ export class AppController {
   root(@Res() res: Response) {
     res.sendFile(join(__dirname, '..', 'views', 'index.html'));
   }
+  @Get('plant')
+  plant(@Res() res:Response){
+    res.sendFile(join(__dirname, '..', 'views', 'plant.html'));
+  }
+  @Get('hotel')
+  hotel(@Res() res:Response){
+    res.sendFile(join(__dirname, '..', 'views', 'hotel.html'));
+  }
+  @Get('ticket')
+  ticket(@Res() res:Response){
+    res.sendFile(join(__dirname, '..', 'views', 'ticket.html'));
+  }
+  
 }

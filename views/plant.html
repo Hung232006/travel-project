@@ -1,0 +1,367 @@
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Điểm Đến - TravelHome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13c8ec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: "Plus Jakarta Sans", sans-serif;
+            }
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .map-marker {
+            @apply absolute cursor-pointer hover:scale-125 transition-transform duration-300;
+        }
+        .glow-on-hover:hover {
+            box-shadow: 0 0 20px rgba(19, 200, 236, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20 gap-4">
+<div class="flex items-center gap-2 shrink-0">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined block">travel_explore</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">TravelHome</h2>
+</div>
+<nav class="hidden xl:flex items-center gap-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/">Trang chủ</a>
+<a class="text-sm font-semibold text-primary" href="/plant">Điểm đến</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Tour du lịch</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/hotel">Khách sạn</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/ticket">Vé máy bay</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Combo ưu đãi</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Cẩm nang</a>
+</nav>
+<div class="flex items-center gap-4 flex-1 justify-end max-w-md">
+<div class="relative w-full max-w-[240px] hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/50" placeholder="Tìm điểm đến..." type="text"/>
+</div>
+<button class="bg-primary text-slate-900 px-5 py-2.5 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity shrink-0">
+                            Liên hệ
+                        </button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<section class="relative w-full bg-slate-900 overflow-hidden py-12 lg:py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-4 space-y-6">
+<h1 class="text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+                                Khám Phá <br/><span class="text-primary italic">Bản Đồ</span> Việt Nam
+                            </h1>
+<p class="text-slate-400 text-lg">
+                                Nhấp vào các vùng miền để khám phá những điểm đến hấp dẫn nhất dành riêng cho hành trình của bạn.
+                            </p>
+<div class="flex flex-col gap-4">
+<button class="flex items-center justify-between p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary/20 hover:border-primary transition-all group">
+<span class="font-bold text-white">Miền Bắc</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward_ios</span>
+</button>
+<button class="flex items-center justify-between p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary/20 hover:border-primary transition-all group">
+<span class="font-bold text-white">Miền Trung</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward_ios</span>
+</button>
+<button class="flex items-center justify-between p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-primary/20 hover:border-primary transition-all group">
+<span class="font-bold text-white">Miền Nam</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-8 relative min-h-[500px] flex items-center justify-center">
+<div class="relative w-full max-w-2xl aspect-[3/4] bg-slate-800/50 rounded-3xl border border-white/10 overflow-hidden flex items-center justify-center">
+<img alt="Vietnam Map Overlay" class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1hK9jI9Qxi6FFtYWRelaeb6YXYRxFnfu9tN4Xy0nI2B82oBZlV3tW-gaxahhPQFSKc8zPTLInbBLGDixtr8_E5EEWWtJS1L8FvuuUt5lBP-QwS4GyEZ1wDhJKcCA7AasUeNSaY4SujH_u_5yimBP5NLAlysVJlhojiObSDguIPV0vBwaXZEhdeAe9Wqy-9zzAIPhs5kJOszU_OXNdAvyCixIY3J5nCVsbZDJMlZG8ZC_KEhGJ5A91jy_93FDSAWKAuKI06J0TzlU"/>
+<div class="map-marker top-[20%] left-[45%]" title="Hà Nội">
+<div class="w-4 h-4 bg-primary rounded-full animate-ping absolute"></div>
+<div class="w-4 h-4 bg-primary rounded-full relative border-2 border-white"></div>
+<span class="absolute left-6 top-0 bg-white text-slate-900 text-[10px] font-bold px-2 py-0.5 rounded shadow-lg whitespace-nowrap">Hà Nội</span>
+</div>
+<div class="map-marker top-[15%] left-[55%]" title="Hạ Long">
+<div class="w-4 h-4 bg-primary rounded-full relative border-2 border-white"></div>
+<span class="absolute left-6 top-0 bg-white text-slate-900 text-[10px] font-bold px-2 py-0.5 rounded shadow-lg whitespace-nowrap">Vịnh Hạ Long</span>
+</div>
+<div class="map-marker top-[50%] left-[50%]" title="Đà Nẵng">
+<div class="w-4 h-4 bg-primary rounded-full relative border-2 border-white"></div>
+<span class="absolute left-6 top-0 bg-white text-slate-900 text-[10px] font-bold px-2 py-0.5 rounded shadow-lg whitespace-nowrap">Đà Nẵng</span>
+</div>
+<div class="map-marker top-[80%] left-[40%]" title="TP. Hồ Chí Minh">
+<div class="w-4 h-4 bg-primary rounded-full relative border-2 border-white"></div>
+<span class="absolute left-6 top-0 bg-white text-slate-900 text-[10px] font-bold px-2 py-0.5 rounded shadow-lg whitespace-nowrap">TP. Hồ Chí Minh</span>
+</div>
+<div class="map-marker top-[90%] left-[30%]" title="Phú Quốc">
+<div class="w-4 h-4 bg-primary rounded-full relative border-2 border-white"></div>
+<span class="absolute left-6 top-0 bg-white text-slate-900 text-[10px] font-bold px-2 py-0.5 rounded shadow-lg whitespace-nowrap">Phú Quốc</span>
+</div>
+<div class="text-center p-8">
+<span class="material-symbols-outlined text-6xl text-primary/40 mb-4">map</span>
+<p class="text-white/40 font-medium">Bản đồ tương tác các điểm du lịch</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"></div>
+</section>
+<section class="py-20 space-y-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-end justify-between mb-10">
+<div class="space-y-2">
+<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Nghỉ Dưỡng Sang Trọng</h2>
+<p class="text-slate-500 dark:text-slate-400">Trải nghiệm dịch vụ đẳng cấp 5 sao tại các resort hàng đầu.</p>
+</div>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">Xem tất cả <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-8 scrollbar-hide snap-x">
+<div class="min-w-[320px] group snap-start">
+<div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4">
+<img alt="Amanoi Ninh Thuan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhi0kTWzmtUq0JZYKGKA1qdJ6Ru-L1w0o_BPRdmTIoewgKcAqKbq-MqRyvFfm9xunt6tendwSfJGW3x3cLZ-XXFRjn0ngKZJ8aG3UKohgAK0jMbnK-ikquyoAFGsQ4c1Donp4iyFW0Vui4BEaa4CQ4bY5HU63z4mNk-hYZdRr_Hjf-f8GgGIltTNMhfHB71gyV_ghBioFtsEDrIhugBZPL9NRL3IZrspS1gm0ygC_PSI6Xu2i8zww7uQBKngKVADJekhgUN91WSv4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-yellow-500 text-slate-900 text-[10px] font-extrabold uppercase rounded-full">Hot Deal -20%</span>
+</div>
+<div class="absolute bottom-5 left-5 right-5">
+<div class="flex items-center gap-1 text-yellow-400 mb-1">
+<span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span>
+</div>
+<h4 class="text-white text-xl font-bold">Amanoi Resort</h4>
+<p class="text-white/80 text-sm">Ninh Thuận, Việt Nam</p>
+</div>
+</div>
+</div>
+<div class="min-w-[320px] group snap-start">
+<div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4">
+<img alt="InterContinental Danang" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKy6KSxHZ-MbRgYLPG6ebsnYYwZkOgJKsjAK1vJIXQrPvedCU_7pUIL2E_dbccEDC4H2MQwMxfBsqZ8MaBKWwcrMEIEpSFo0QZ6Ke9uznSjYdC-Jxvr8xIY1Nd44MkoGkMM2q72JzGznzpEYlUUyw70LDs9m_RgMW4J3RgQWrWcecocB-vdWo2i-9FzUPYs-B7AeN3djHTN3NQjCz22tYMqmibrXOlJj8ykHmLvoCFqPtWNeIc9VB3dSy1xqnJwM4Opu2zKTJEAQ0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-5 left-5 right-5">
+<div class="flex items-center gap-1 text-yellow-400 mb-1">
+<span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span>
+</div>
+<h4 class="text-white text-xl font-bold">InterContinental Sun Peninsula</h4>
+<p class="text-white/80 text-sm">Đà Nẵng, Việt Nam</p>
+</div>
+</div>
+</div>
+<div class="min-w-[320px] group snap-start">
+<div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4">
+<img alt="Six Senses Ninh Van Bay" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1hK9jI9Qxi6FFtYWRelaeb6YXYRxFnfu9tN4Xy0nI2B82oBZlV3tW-gaxahhPQFSKc8zPTLInbBLGDixtr8_E5EEWWtJS1L8FvuuUt5lBP-QwS4GyEZ1wDhJKcCA7AasUeNSaY4SujH_u_5yimBP5NLAlysVJlhojiObSDguIPV0vBwaXZEhdeAe9Wqy-9zzAIPhs5kJOszU_OXNdAvyCixIY3J5nCVsbZDJMlZG8ZC_KEhGJ5A91jy_93FDSAWKAuKI06J0TzlU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-5 left-5 right-5">
+<div class="flex items-center gap-1 text-yellow-400 mb-1">
+<span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span>
+</div>
+<h4 class="text-white text-xl font-bold">Six Senses Ninh Van Bay</h4>
+<p class="text-white/80 text-sm">Nha Trang, Việt Nam</p>
+</div>
+</div>
+</div>
+<div class="min-w-[320px] group snap-start">
+<div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4">
+<img alt="Marriott Phu Quoc" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS2ljGi-7hU31YKhpHRhxuJRKfuYGXWNhwSP8lUqL1pb9KVCD-RGZisI5hOLIkPl9kL2Lb8bZ5ng-xtQuj2TsT9Gf5fasatij7sFVm3bfD4h0ZBe9rlK4ZHk0mSzquMF0H-U7mqd57Jv85vECeE_35eUP89tlwIjmZLh8r8QDO30rjvBOj7px3i6949ikjUMIZVEnj7kT9-xcRHWcnuBzujMQWhRRkpz7ogvFeMtJaMAb9ALT-1eobUWirDEJgqjJJOAeQGE0-Lt0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-yellow-500 text-slate-900 text-[10px] font-extrabold uppercase rounded-full">Ưu đãi mùa hè</span>
+</div>
+<div class="absolute bottom-5 left-5 right-5">
+<div class="flex items-center gap-1 text-yellow-400 mb-1">
+<span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span><span class="material-symbols-outlined text-sm fill-1">star</span>
+</div>
+<h4 class="text-white text-xl font-bold">JW Marriott Emerald Bay</h4>
+<p class="text-white/80 text-sm">Phú Quốc, Việt Nam</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-end justify-between mb-10">
+<div class="space-y-2">
+<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Khám Phá Mạo Hiểm</h2>
+<p class="text-slate-500 dark:text-slate-400">Dành cho những tâm hồn khao khát chinh phục thiên nhiên hùng vĩ.</p>
+</div>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">Xem tất cả <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-8 scrollbar-hide snap-x">
+<div class="min-w-[400px] group snap-start">
+<div class="relative aspect-[16/10] rounded-3xl overflow-hidden mb-4">
+<img alt="Son Doong Cave" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs7sxZG6oHDHe6n-On1Ptr-TGFIb8lgHTT6tFXVf51m-y5y_W7Eum9dIeKCHJWC7emFrO6pet3927R_KraCtSemqDpwI9K7Lqn_ah0sywa4FfU0ibq-GGKeiz1psqUoUq170yyGHGRqRKUl6JP867bzEjgz0muNI9LJtnc_BIrmeWtAyH6YQWzBie9LSLD97uUGj66jZmRj-OzohMxfWqJod9_udVwslr7vbTdpgH_3CaTfDAAnkiqXYigFU1oSjcb0yApzDYtwo0"/>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute bottom-6 left-6">
+<span class="bg-primary/90 text-slate-900 px-3 py-1 rounded-lg text-xs font-bold mb-2 inline-block">Thám hiểm hang động</span>
+<h4 class="text-white text-2xl font-bold">Hang Sơn Đoòng</h4>
+<p class="text-white/90 text-sm font-medium">Quảng Bình, Việt Nam</p>
+</div>
+</div>
+</div>
+<div class="min-w-[400px] group snap-start">
+<div class="relative aspect-[16/10] rounded-3xl overflow-hidden mb-4">
+<img alt="Ha Giang Loop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1hK9jI9Qxi6FFtYWRelaeb6YXYRxFnfu9tN4Xy0nI2B82oBZlV3tW-gaxahhPQFSKc8zPTLInbBLGDixtr8_E5EEWWtJS1L8FvuuUt5lBP-QwS4GyEZ1wDhJKcCA7AasUeNSaY4SujH_u_5yimBP5NLAlysVJlhojiObSDguIPV0vBwaXZEhdeAe9Wqy-9zzAIPhs5kJOszU_OXNdAvyCixIY3J5nCVsbZDJMlZG8ZC_KEhGJ5A91jy_93FDSAWKAuKI06J0TzlU"/>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute bottom-6 left-6">
+<span class="bg-primary/90 text-slate-900 px-3 py-1 rounded-lg text-xs font-bold mb-2 inline-block">Cung đường đèo</span>
+<h4 class="text-white text-2xl font-bold">Hà Giang Loop</h4>
+<p class="text-white/90 text-sm font-medium">Hà Giang, Việt Nam</p>
+</div>
+<div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs font-bold">Ưu đãi nhóm</div>
+</div>
+</div>
+<div class="min-w-[400px] group snap-start">
+<div class="relative aspect-[16/10] rounded-3xl overflow-hidden mb-4">
+<img alt="Fansipan Peak" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS2ljGi-7hU31YKhpHRhxuJRKfuYGXWNhwSP8lUqL1pb9KVCD-RGZisI5hOLIkPl9kL2Lb8bZ5ng-xtQuj2TsT9Gf5fasatij7sFVm3bfD4h0ZBe9rlK4ZHk0mSzquMF0H-U7mqd57Jv85vECeE_35eUP89tlwIjmZLh8r8QDO30rjvBOj7px3i6949ikjUMIZVEnj7kT9-xcRHWcnuBzujMQWhRRkpz7ogvFeMtJaMAb9ALT-1eobUWirDEJgqjJJOAeQGE0-Lt0"/>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute bottom-6 left-6">
+<span class="bg-primary/90 text-slate-900 px-3 py-1 rounded-lg text-xs font-bold mb-2 inline-block">Leo núi trekking</span>
+<h4 class="text-white text-2xl font-bold">Đỉnh Fansipan</h4>
+<p class="text-white/90 text-sm font-medium">Lào Cai, Việt Nam</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-end justify-between mb-10">
+<div class="space-y-2">
+<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Du Lịch Tâm Linh</h2>
+<p class="text-slate-500 dark:text-slate-400">Tìm lại sự bình yên trong tâm hồn tại những vùng đất thiêng.</p>
+</div>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">Xem tất cả <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group cursor-pointer">
+<div class="relative h-64 rounded-3xl overflow-hidden mb-4">
+<img alt="Hoi An Pagoda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLS5ud2RV_iF9oyMOORu7rSqiClkJ7wa8YFiJlBPJwrOVEYqxvt8HfXWluIV-hBBXPDeTD1SxoZveatpmIqAe8ADlRhBUu8mySPf3R5kQEG_kqWZzYED1_1s9z-JasUNEYT67D3iAhwCxgMfpZnmhMI3oG8F3jeLQnb2bskxz5RFJX0dqxV3VwBzg-NXk5EpXEIe67TfApB5CE4LCyhTd7akpdoGEMmTzxu8Dz1zKKurD2iEvzCI8NgAiqvFEKwsbGiX3SPARGEqk"/>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 px-3 py-1 rounded-xl text-xs font-bold">Bình yên</div>
+</div>
+<h4 class="text-xl font-bold mb-1">Chùa Cầu &amp; Phố Cổ</h4>
+<p class="text-slate-500 text-sm">Hội An, Quảng Nam</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative h-64 rounded-3xl overflow-hidden mb-4">
+<img alt="Bai Dinh Pagoda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfRnyg96tchY9gvMdq_RwELFo1oz9FAm2Wzliv_AXCG2tzvXquMarTEq48D5xhz9QSncPyg6G5iVhnX8ggSG4bBubawpVOqICxdrCDOsYkoyf3UXIlFCiWM9sXcTdCF0T16Kt3PbwuGyJyuFCz9-cp8MEtITPVfaX5rwj2yb_piBMfL9m9x7SUH7ATZTa2WNQeeBcP5ch1rcDCQyeyWQpJQmZg0uLsaBsyEAeCPT-uxQ9TPRPixCwGl3PZ5cAIgqwf1WMKbBUQeHE"/>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 px-3 py-1 rounded-xl text-xs font-bold">Kỳ vĩ</div>
+</div>
+<h4 class="text-xl font-bold mb-1">Quần thể Bái Đính</h4>
+<p class="text-slate-500 text-sm">Ninh Bình, Việt Nam</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative h-64 rounded-3xl overflow-hidden mb-4">
+<img alt="Yen Tu Mountain" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvkKwF43WQeVCwP-mLqXYnPiBzR7DIrmMP6XDLz6XnKbK3vBaBqQH8cWgnv7hXr231RdKA0MAnxUcs2OFNllNHXzc_KpsIzDWKKcoyGj3gS0rwivGsTU3JA2NUDq-E84Yi5O4-0fFLWfGwCe6ElZwnLE46lnl7rRJ5TUiO14Tlrdq-NKYOjJGjnLYSEdXJJfPL_yCwnfvPhe-u70PUtpkNL7wbyzDx_9dm15jj7zjtpVsQakVf1eEDahnOgCwxekkEo3GbVxOpwkI"/>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 px-3 py-1 rounded-xl text-xs font-bold">Thanh tịnh</div>
+</div>
+<h4 class="text-xl font-bold mb-1">Yên Tử - Đất Phật</h4>
+<p class="text-slate-500 text-sm">Quảng Ninh, Việt Nam</p>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+<div class="relative rounded-[2.5rem] overflow-hidden bg-slate-900 py-16 px-8 lg:px-16">
+<img alt="Newsletter Background" class="absolute inset-0 w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgUx_MMlfDtRIMOJkyjl_ynZvhVzijSl3yeUNiiNokhdZnKbKyvIv64yzcKqXDOd80EzOPoRhtQGC837zWQlxxh-3NpEls631OebntbNjv-8IkMYXbFBNGAGQur92wQsy2axPuwBOBPyH-DcnBfzAn7mWfrnRdwRhcURqwkVRLOtUdoqVpY1MU657ru3bMizhHCVU1h0lKPPT3q_dbglpxE9Gs4yps5VWzZ5S4EcOazs-TjzTKXAJrphFOpw__ArRQ9_USecXqFHI"/>
+<div class="relative z-10 max-w-2xl mx-auto text-center space-y-8">
+<h2 class="text-3xl lg:text-4xl font-extrabold text-white">Sẵn sàng cho chuyến đi tiếp theo?</h2>
+<p class="text-slate-300 text-lg">Đăng ký nhận bản tin để không bỏ lỡ những ưu đãi độc quyền và gợi ý du lịch mới nhất từ TravelHome.</p>
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="flex-1 px-6 py-4 rounded-2xl bg-white/10 border border-white/20 text-white placeholder:text-slate-400 focus:ring-2 focus:ring-primary focus:border-transparent outline-none backdrop-blur-md" placeholder="Địa chỉ email của bạn" type="email"/>
+<button class="bg-primary text-slate-900 px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-lg hover:shadow-primary/25 transition-all glow-on-hover">Đăng ký ngay</button>
+</form>
+<p class="text-slate-500 text-xs">Chúng tôi tôn trọng quyền riêng tư của bạn. Không bao giờ gửi thư rác.</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-slate-950 text-slate-400 py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="space-y-6">
+<div class="flex items-center gap-2 text-white">
+<div class="bg-primary p-1.5 rounded-lg">
+<span class="material-symbols-outlined block text-slate-900">travel_explore</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight">TravelHome</h2>
+</div>
+<p class="text-sm leading-relaxed">
+                            Mỗi điểm đến là một câu chuyện. Hãy để chúng tôi cùng bạn viết nên những chương đẹp nhất trong hành trình khám phá cuộc sống.
+                        </p>
+<div class="flex gap-4">
+<a class="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-colors border border-slate-800" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-colors border border-slate-800" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-colors border border-slate-800" href="#">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Điểm đến phổ biến</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Hà Nội - Thủ đô ngàn năm</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Hạ Long - Kỳ quan thế giới</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Đà Nẵng - Thành phố đáng sống</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Phú Quốc - Đảo ngọc thiên đường</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sapa - Thành phố trong sương</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Trải nghiệm</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Tour nghỉ dưỡng 5 sao</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Trekking &amp; Mạo hiểm</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Ẩm thực vùng miền</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Du lịch tâm linh</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Trải nghiệm địa phương</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Hỗ trợ</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Điều khoản sử dụng</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Chính sách bảo mật</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Câu hỏi thường gặp</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Trung tâm trợ giúp</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-900 text-center text-xs">
+<p>© 2024 TravelHome Destination Finder. All rights reserved. Designed for Vietnamese travelers.</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

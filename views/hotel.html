@@ -1,0 +1,359 @@
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khách Sạn - TravelHome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13c8ec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "3xl": "2.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20 gap-4">
+<div class="flex items-center gap-2 shrink-0">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined block">travel_explore</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">TravelHome</h2>
+</div>
+<nav class="hidden xl:flex items-center gap-5">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/">Trang chủ</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/plant">Điểm đến</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Tour du lịch</a>
+<a class="text-sm font-semibold text-primary transition-colors" href="/hotel">Khách sạn</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="/ticket">Vé máy bay</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Combo ưu đãi</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Cẩm nang</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Liên hệ</a>
+</nav>
+<div class="flex items-center gap-4 flex-1 justify-end max-w-[200px]">
+<div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-800">
+<img alt="Avatar" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH72MIYoO2XxpG03tymY0FWY29W-EQmj9NNhnSBU1ob9HhUGhLSa75bFL7RPkwYSIjhTGBipoZ-RyFYSwDpg73cW8qJGlloWNwyDVz8RScZSARc81D7qTu5vu4ogy3mKulKPFmrH2rI9aPB4ysItSzQdSp-6L81Gw86y7cF99RLGnqWS9qJrXSOQkz-Aze_uh1isAXrdxnLWSL73uQyPhb6H7PD2AcPat_HrwzJSMwpXNCRbaS-LAuFMxt2AjXqYvW3A_4IiclJfM"/>
+</div>
+<button class="bg-primary text-slate-900 px-5 py-2.5 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity shrink-0">
+                            Đăng nhập
+                        </button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<div class="text-center mb-10 space-y-4">
+<h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white">Tìm Kiếm Khách Sạn Hoàn Hảo</h1>
+<p class="text-slate-500 dark:text-slate-400">Hơn 500,000+ chỗ nghỉ đang chờ đón bạn khám phá.</p>
+</div>
+<div class="max-w-5xl mx-auto bg-white dark:bg-slate-800 p-4 md:p-2 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 flex flex-col md:flex-row items-center gap-2">
+<div class="flex-1 w-full grid md:grid-cols-3 gap-2">
+<div class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-2xl transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-slate-400">Địa điểm</span>
+<input class="bg-transparent border-none p-0 text-sm font-bold focus:ring-0 placeholder:text-slate-400 w-full" placeholder="Bạn muốn đi đâu?" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 border-y md:border-y-0 md:border-x border-slate-100 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-2xl transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-slate-400">Ngày đi/về</span>
+<span class="text-sm font-bold">24 Th5 - 28 Th5</span>
+</div>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-2xl transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary">group</span>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-slate-400">Số phòng</span>
+<span class="text-sm font-bold">2 người, 1 phòng</span>
+</div>
+</div>
+</div>
+<button class="w-full md:w-auto bg-primary text-slate-900 px-10 py-4 md:py-3.5 rounded-2xl font-bold text-base hover:shadow-lg hover:shadow-primary/25 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">search</span>
+                        Tìm kiếm
+                    </button>
+</div>
+<div class="flex items-center gap-3 mt-8 overflow-x-auto scrollbar-hide pb-2">
+<button class="px-5 py-2.5 bg-primary text-slate-900 rounded-full text-sm font-bold whitespace-nowrap shadow-md shadow-primary/20">Tất cả</button>
+<button class="px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-semibold whitespace-nowrap hover:border-primary transition-colors">Resort 5 sao</button>
+<button class="px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-semibold whitespace-nowrap hover:border-primary transition-colors">Khách sạn trung tâm</button>
+<button class="px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-semibold whitespace-nowrap hover:border-primary transition-colors">Homestay view đẹp</button>
+<button class="px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-semibold whitespace-nowrap hover:border-primary transition-colors">Biệt thự nguyên căn</button>
+<button class="px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-semibold whitespace-nowrap hover:border-primary transition-colors">Khách sạn giá rẻ</button>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="flex items-end justify-between mb-10">
+<div class="space-y-2">
+<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Khách sạn dành cho bạn</h2>
+<p class="text-slate-500 dark:text-slate-400">Dựa trên lịch sử tìm kiếm và sở thích của bạn.</p>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-primary font-bold cursor-pointer group">
+                        Xem tất cả <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="group relative aspect-[3/4] rounded-3xl overflow-hidden shadow-lg">
+<img alt="InterContinental" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhi0kTWzmtUq0JZYKGKA1qdJ6Ru-L1w0o_BPRdmTIoewgKcAqKbq-MqRyvFfm9xunt6tendwSfJGW3x3cLZ-XXFRjn0ngKZJ8aG3UKohgAK0jMbnK-ikquyoAFGsQ4c1Donp4iyFW0Vui4BEaa4CQ4bY5HU63z4mNk-hYZdRr_Hjf-f8GgGIltTNMhfHB71gyV_ghBioFtsEDrIhugBZPL9NRL3IZrspS1gm0ygC_PSI6Xu2i8zww7uQBKngKVADJekhgUN91WSv4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+<button class="absolute top-5 right-5 h-10 w-10 bg-white/20 backdrop-blur-md rounded-full text-white flex items-center justify-center hover:bg-white hover:text-red-500 transition-all">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute bottom-5 left-5 right-5 space-y-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm fill-current">star</span>
+<span class="text-white text-xs font-bold">4.9 (1,240 đánh giá)</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight">InterContinental Đà Nẵng Sun Peninsula</h3>
+<div class="flex items-center justify-between pt-2">
+<p class="text-white/80 text-xs">Giá từ</p>
+<p class="text-primary text-lg font-extrabold">12.500.000đ<span class="text-white/60 text-[10px] font-normal italic">/đêm</span></p>
+</div>
+</div>
+</div>
+<div class="group relative aspect-[3/4] rounded-3xl overflow-hidden shadow-lg">
+<img alt="JW Marriott" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKy6KSxHZ-MbRgYLPG6ebsnYYwZkOgJKsjAK1vJIXQrPvedCU_7pUIL2E_dbccEDC4H2MQwMxfBsqZ8MaBKWwcrMEIEpSFo0QZ6Ke9uznSjYdC-Jxvr8xIY1Nd44MkoGkMM2q72JzGznzpEYlUUyw70LDs9m_RgMW4J3RgQWrWcecocB-vdWo2i-9FzUPYs-B7AeN3djHTN3NQjCz22tYMqmibrXOlJj8ykHmLvoCFqPtWNeIc9VB3dSy1xqnJwM4Opu2zKTJEAQ0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+<button class="absolute top-5 right-5 h-10 w-10 bg-white/20 backdrop-blur-md rounded-full text-white flex items-center justify-center hover:bg-white hover:text-red-500 transition-all">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute bottom-5 left-5 right-5 space-y-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm fill-current">star</span>
+<span class="text-white text-xs font-bold">4.8 (850 đánh giá)</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight">JW Marriott Phu Quoc Emerald Bay</h3>
+<div class="flex items-center justify-between pt-2">
+<p class="text-white/80 text-xs">Giá từ</p>
+<p class="text-primary text-lg font-extrabold">8.200.000đ<span class="text-white/60 text-[10px] font-normal italic">/đêm</span></p>
+</div>
+</div>
+</div>
+<div class="group relative aspect-[3/4] rounded-3xl overflow-hidden shadow-lg">
+<img alt="Amanoi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1hK9jI9Qxi6FFtYWRelaeb6YXYRxFnfu9tN4Xy0nI2B82oBZlV3tW-gaxahhPQFSKc8zPTLInbBLGDixtr8_E5EEWWtJS1L8FvuuUt5lBP-QwS4GyEZ1wDhJKcCA7AasUeNSaY4SujH_u_5yimBP5NLAlysVJlhojiObSDguIPV0vBwaXZEhdeAe9Wqy-9zzAIPhs5kJOszU_OXNdAvyCixIY3J5nCVsbZDJMlZG8ZC_KEhGJ5A91jy_93FDSAWKAuKI06J0TzlU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+<button class="absolute top-5 right-5 h-10 w-10 bg-white/20 backdrop-blur-md rounded-full text-white flex items-center justify-center hover:bg-white hover:text-red-500 transition-all">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute bottom-5 left-5 right-5 space-y-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm fill-current">star</span>
+<span class="text-white text-xs font-bold">5.0 (520 đánh giá)</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight">Amanoi Resort Ninh Thuận</h3>
+<div class="flex items-center justify-between pt-2">
+<p class="text-white/80 text-xs">Giá từ</p>
+<p class="text-primary text-lg font-extrabold">25.000.000đ<span class="text-white/60 text-[10px] font-normal italic">/đêm</span></p>
+</div>
+</div>
+</div>
+<div class="group relative aspect-[3/4] rounded-3xl overflow-hidden shadow-lg">
+<img alt="The Reverie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLS5ud2RV_iF9oyMOORu7rSqiClkJ7wa8YFiJlBPJwrOVEYqxvt8HfXWluIV-hBBXPDeTD1SxoZveatpmIqAe8ADlRhBUu8mySPf3R5kQEG_kqWZzYED1_1s9z-JasUNEYT67D3iAhwCxgMfpZnmhMI3oG8F3jeLQnb2bskxz5RFJX0dqxV3VwBzg-NXk5EpXEIe67TfApB5CE4LCyhTd7akpdoGEMmTzxu8Dz1zKKurD2iEvzCI8NgAiqvFEKwsbGiX3SPARGEqk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+<button class="absolute top-5 right-5 h-10 w-10 bg-white/20 backdrop-blur-md rounded-full text-white flex items-center justify-center hover:bg-white hover:text-red-500 transition-all">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute bottom-5 left-5 right-5 space-y-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm fill-current">star</span>
+<span class="text-white text-xs font-bold">4.7 (2,100 đánh giá)</span>
+</div>
+<h3 class="text-white text-xl font-bold leading-tight">The Reverie Saigon Hotel</h3>
+<div class="flex items-center justify-between pt-2">
+<p class="text-white/80 text-xs">Giá từ</p>
+<p class="text-primary text-lg font-extrabold">6.800.000đ<span class="text-white/60 text-[10px] font-normal italic">/đêm</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-slate-50 dark:bg-slate-900/50 py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">Khách Sạn Nổi Bật</h2>
+<p class="text-slate-500 dark:text-slate-400">Những lựa chọn được cộng đồng du khách đánh giá cao nhất trong tháng này.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<article class="bg-white dark:bg-slate-800 rounded-[2rem] overflow-hidden shadow-sm group border border-slate-100 dark:border-slate-700">
+<div class="relative h-64 overflow-hidden">
+<img alt="Hotel Featured 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs7sxZG6oHDHe6n-On1Ptr-TGFIb8lgHTT6tFXVf51m-y5y_W7Eum9dIeKCHJWC7emFrO6pet3927R_KraCtSemqDpwI9K7Lqn_ah0sywa4FfU0ibq-GGKeiz1psqUoUq170yyGHGRqRKUl6JP867bzEjgz0muNI9LJtnc_BIrmeWtAyH6YQWzBie9LSLD97uUGj66jZmRj-OzohMxfWqJod9_udVwslr7vbTdpgH_3CaTfDAAnkiqXYigFU1oSjcb0yApzDYtwo0"/>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 bg-primary text-slate-900 text-xs font-bold rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-xs fill-current">verified</span> Lựa chọn hàng đầu
+                                    </span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 text-primary text-sm mb-3">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="font-bold">4.9/5 Tuyệt vời</span>
+<span class="text-slate-300 dark:text-slate-600">|</span>
+<span class="text-slate-400 font-medium">1,5k+ đánh giá</span>
+</div>
+<h3 class="text-xl font-bold mb-4 line-clamp-1 hover:text-primary transition-colors cursor-pointer">Ana Mandara Villas Dalat Resort &amp; Spa</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                    Khu nghỉ dưỡng di sản độc bản với những căn biệt thự Pháp cổ kính nép mình giữa rừng thông thơ mộng của Đà Lạt.
+                                </p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div>
+<p class="text-xs text-slate-400 mb-0.5">Giá chỉ từ</p>
+<p class="text-lg font-bold text-primary">3.250.000đ</p>
+</div>
+<a class="bg-slate-900 dark:bg-slate-700 text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-primary hover:text-slate-900 transition-all" href="#">
+                                        Xem chi tiết
+                                    </a>
+</div>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-[2rem] overflow-hidden shadow-sm group border border-slate-100 dark:border-slate-700">
+<div class="relative h-64 overflow-hidden">
+<img alt="Hotel Featured 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvkKwF43WQeVCwP-mLqXYnPiBzR7DIrmMP6XDLz6XnKbK3vBaBqQH8cWgnv7hXr231RdKA0MAnxUcs2OFNllNHXzc_KpsIzDWKKcoyGj3gS0rwivGsTU3JA2NUDq-E84Yi5O4-0fFLWfGwCe6ElZwnLE46lnl7rRJ5TUiO14Tlrdq-NKYOjJGjnLYSEdXJJfPL_yCwnfvPhe-u70PUtpkNL7wbyzDx_9dm15jj7zjtpVsQakVf1eEDahnOgCwxekkEo3GbVxOpwkI"/>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 bg-primary text-slate-900 text-xs font-bold rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-xs fill-current">verified</span> Bán chạy nhất
+                                    </span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 text-primary text-sm mb-3">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="font-bold">4.8/5 Rất tốt</span>
+<span class="text-slate-300 dark:text-slate-600">|</span>
+<span class="text-slate-400 font-medium">2,8k+ đánh giá</span>
+</div>
+<h3 class="text-xl font-bold mb-4 line-clamp-1 hover:text-primary transition-colors cursor-pointer">Silk Sense Hoi An River Resort</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                    Nằm bên dòng sông Cổ Cò thơ mộng, mang đến không gian nghỉ dưỡng xanh mát và bền vững tại Hội An.
+                                </p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div>
+<p class="text-xs text-slate-400 mb-0.5">Giá chỉ từ</p>
+<p class="text-lg font-bold text-primary">2.100.000đ</p>
+</div>
+<a class="bg-slate-900 dark:bg-slate-700 text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-primary hover:text-slate-900 transition-all" href="#">
+                                        Xem chi tiết
+                                    </a>
+</div>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-[2rem] overflow-hidden shadow-sm group border border-slate-100 dark:border-slate-700">
+<div class="relative h-64 overflow-hidden">
+<img alt="Hotel Featured 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgUx_MMlfDtRIMOJkyjl_ynZvhVzijSl3yeUNiiNokhdZnKbKyvIv64yzcKqXDOd80EzOPoRhtQGC837zWQlxxh-3NpEls631OebntbNjv-8IkMYXbFBNGAGQur92wQsy2axPuwBOBPyH-DcnBfzAn7mWfrnRdwRhcURqwkVRLOtUdoqVpY1MU657ru3bMizhHCVU1h0lKPPT3q_dbglpxE9Gs4yps5VWzZ5S4EcOazs-TjzTKXAJrphFOpw__ArRQ9_USecXqFHI"/>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-1.5 bg-primary text-slate-900 text-xs font-bold rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-xs fill-current">verified</span> Ưu đãi hời
+                                    </span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 text-primary text-sm mb-3">
+<span class="material-symbols-outlined text-sm fill-current">star</span>
+<span class="font-bold">4.7/5 Rất tốt</span>
+<span class="text-slate-300 dark:text-slate-600">|</span>
+<span class="text-slate-400 font-medium">950 đánh giá</span>
+</div>
+<h3 class="text-xl font-bold mb-4 line-clamp-1 hover:text-primary transition-colors cursor-pointer">Topas Ecolodge Sapa</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                    Trải nghiệm kỳ nghỉ trên mây tại khu nghỉ dưỡng sở hữu hồ bơi vô cực ngắm trọn thung lũng Mường Hoa.
+                                </p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div>
+<p class="text-xs text-slate-400 mb-0.5">Giá chỉ từ</p>
+<p class="text-lg font-bold text-primary">5.600.000đ</p>
+</div>
+<a class="bg-slate-900 dark:bg-slate-700 text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-primary hover:text-slate-900 transition-all" href="#">
+                                        Xem chi tiết
+                                    </a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-slate-900 text-slate-400 py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="space-y-6">
+<div class="flex items-center gap-2 text-white">
+<div class="bg-primary p-1.5 rounded-lg">
+<span class="material-symbols-outlined block text-slate-900">travel_explore</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight">TravelHome</h2>
+</div>
+<p class="text-sm leading-relaxed">
+                            Chúng tôi cam kết mang đến những trải nghiệm du lịch tuyệt vời và đáng nhớ nhất cho mọi khách hàng. Khám phá thế giới cùng TravelHome ngay hôm nay.
+                        </p>
+<div class="flex gap-4">
+<a class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-colors" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-colors" href="#"><span class="material-symbols-outlined text-lg">share</span></a>
+<a class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-colors" href="#"><span class="material-symbols-outlined text-lg">mail</span></a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Liên kết nhanh</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Về chúng tôi</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Điều khoản dịch vụ</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Chính sách bảo mật</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Câu hỏi thường gặp</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Đối tác</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Dịch vụ</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Đặt vé máy bay</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Khách sạn cao cấp</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Thuê xe du lịch</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Bảo hiểm du lịch</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tổ chức sự kiện</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Bản tin</h4>
+<p class="text-sm mb-6">Đăng ký để nhận các ưu đãi hấp dẫn và tin tức du lịch mới nhất.</p>
+<form class="space-y-3">
+<input class="w-full px-4 py-3 bg-slate-800 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/50 text-white placeholder:text-slate-500" placeholder="Email của bạn" type="email"/>
+<button class="w-full bg-primary text-slate-900 font-bold py-3 rounded-xl hover:opacity-90 transition-opacity">Đăng ký ngay</button>
+</form>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-800 text-center text-xs">
+<p>© 2024 TravelHome. All rights reserved. Designed with passion for travelers.</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
